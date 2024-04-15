@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4FA2_Genita</title>
+</head>
+<body>
+    <form onsubmit="return num()">
+        <p>Enter a number between 2 and 10 </p>
+        <input type="text" id="num1">
+        <span>x</span>
+        <input type="text" id="num2"><br><br>
+        <input type="submit" value="Multiply"><br><br>
+        <table id="out"></table>
+    </form>
+    <script>
+        function num(){
+            document.getElementById("out").innerHTML = " ";
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            if ((num1>10||num1<2)||isNaN(num1)==true){
+                alert("Enter a number between 2 and 10");
+                return 0;
+            }
+            else {
+                if((num2>10||num2<2)||isNaN(num2)==true){
+                alert("Enter a number between 2 and 10");
+                return 0;
+                }else{
+                }
+            }
+            tab = [];
+            for(x=1;x<=num1;x++){
+                r = [];
+                for (y=1;y<=num2;y++){
+                    r.push(x*y);
+                }
+                tab.push(r);
+            }
+            var res = document.getElementById("out");
+            for (const r of tab) {
+                res.innerHTML += r.join('\t') + '<br/>';
+            }
+            var endres = res.innerHTML;
+            console.log(endres);
+            return false;
+        }
+    </script>
+</body>
+</html>
